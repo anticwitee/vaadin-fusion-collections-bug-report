@@ -12,6 +12,7 @@ import { router } from '../index';
 import { views } from '../routes';
 import { appStore } from '../stores/app-store';
 import { Layout } from './view';
+import { dummyStore } from '../stores/dummy-store';
 
 interface RouteInfo {
   path: string;
@@ -61,6 +62,8 @@ export class MainLayout extends Layout {
         AppLayoutElement.dispatchCloseOverlayDrawerEvent();
       }
     );
+
+    dummyStore.fetchDummy();
   }
 
   private getMenuRoutes(): RouteInfo[] {
